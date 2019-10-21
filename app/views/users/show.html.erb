@@ -10,5 +10,14 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>First Micropost</strong><br>
+  <% if @user.microposts.first != nil %>
+  <%= @user.microposts.first["content"] %><br>
+  <%= @user.microposts.first["created_at"] %><br>
+  <%= @user.microposts.first["updated_at"] %><br>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
